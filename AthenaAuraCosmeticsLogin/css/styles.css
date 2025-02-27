@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+#slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+#slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+#slideshow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern.png');
+    opacity: 0.1;
+    z-index: 3;
+}
+
+.top-buttons {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 4;
+}
+
+.left-buttons, .right-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.top-btn, .icon-btn {
+    padding: 10px 20px;
+    border: none; /* Removed border */
+    border-radius: 4px;
+    background: transparent;
+    color: black; /* Changed text color to black */
+    font-weight: bold; /* Made text bold */
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.top-btn:hover, .icon-btn:hover {
+    background: gold;
+    color: black;
+}
+
+.icon-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px; /* Set a specific width for the container */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    border: 1px solid gold;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 4;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.login-container h1 {
+    color: gold;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure the form takes full width of the container */
+}
+
+.login-container input {
+    width: 260px; /* Set a specific width for the input fields */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gold;
+    border-radius: 4px;
+    background: black;
+    color: gold;
+    transition: all 0.3s ease;
+    padding-left: 30px; /* Added padding for the icon */
+}
+
+.login-container input:focus {
+    border-color: #ffeb3b;
+    outline: none; /* Remove outline */
+}
+
+.login-container input::placeholder {
+    color: gold;
+}
+
+.login-container button {
+    width: 260px; /* Match the width of the input fields */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gold;
+    border-radius: 4px;
+    background: transparent;
+    color: rgb(226, 224, 69);
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.login-container button:hover {
+    background: gold;
+    color: black;
+}
+
+.create-account-btn {
+    width: 260px; /* Match the width of the input fields */
+    padding: 10px;
+    margin: 20px 0 0 0;
+    border: 1px solid gold;
+    border-radius: 4px;
+    background: transparent;
+    color: rgb(226, 224, 69);
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.create-account-btn:hover {
+    background: gold;
+    color: black;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    width: 260px; /* Match the width of the input fields */
+}
+
+.social-btn {
+    width: 125px; /* Set the width to half the width of the input fields minus some margin */
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.3s ease;
+    border: none; /* Remove the border */
+}
+
+.social-btn:hover {
+    background: gold;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fact-box {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: gold;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid gold;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 10;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    font-weight: bold; /* Made facts bold */
+}
+
+.left-fact-box {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+.right-fact-box {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.fact-box.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+.fact-box.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+input[type="text"], input[type="password"] {
+    background-image: url('../images/icon.png');
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}

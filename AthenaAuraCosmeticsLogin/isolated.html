@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Debug</title>
+    <style>
+        body, h1, p, div, input, button, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000, #333333);
+            color: #d4af37;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .carousel img {
+            min-width: 100%;
+            transition: transform 1s ease-in-out;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <img src="images/style1.jpg" alt="Style 1">
+        <img src="images/style2.jpg" alt="Style 2">
+        <img src="images/style3.jpg" alt="Style 3">
+    </div>
+    <script>
+        const images = ["style1.jpg", "style2.jpg", "style3.jpg"];
+        let currentIndex = 0;
+        const slideshow = document.getElementById('slideshow');
+
+        function changeImage() {
+            slideshow.style.backgroundImage = `url('${images[currentIndex]}')`;
+            console.log(`Current Image: ${images[currentIndex]}`);  // Add this line
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeImage, 3000);
+        changeImage(); // Initial call to set the first image
+
+    </script>
+</body>
+</html>
