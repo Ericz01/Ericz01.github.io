@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eric Nyaga | Digital Marketing Strategist & Software Developer</title>
+  <style>
+    :root {
+      --primary: #2f80ed;
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --card: #f3f3f3;
+    }
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #f3f3f3;
+      --card: #2a2a2a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      animation: fadeIn 1s ease-in-out;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .socials {
+      margin-top: 1rem;
+    }
+    .socials a {
+      margin: 0 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .projects {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <header>
+    <h1>Eric Nyaga</h1>
+    <p>Software Developer • Digital Marketer • Virtual Assistant • Tech Explorer</p>
+    <div class="socials">
+      <a href="https://github.com/Ericz01" target="_blank">GitHub</a>
+      <a href="www.linkedin.com/in/eric-nyaga22" target="_blank">LinkedIn</a>
+      <a href="https://ericnyaga01.carrd.co/" target="_blank">Portfolio</a>
+      <a href="mailto:erickinyua770@gmail.com">Email</a>
+    </div>
+  </header>
+
+  <section class="projects">
+    <div class="card">
+      <h2>🌐 Shopify Optimization System</h2>
+      <p>Built a product entry system for Digital Store, optimizing product visibility and training new employees on Shopify usage.</p>
+    </div>
+    <div class="card">
+      <h2>📊 Finance Tracking Tool</h2>
+      <p>Designed a branch-level finance tool still used at Digital Store to monitor performance and promote accountability.</p>
+    </div>
+    <div class="card">
+      <h2>📈 Digital Campaigns</h2>
+      <p>Ran multiple successful marketing campaigns using Canva, Meta Ads, and analytics to improve ROI.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Eric Nyaga. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      body.setAttribute("data-theme", newTheme);
+    }
+  </script>
+</body>
+</html>
